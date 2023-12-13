@@ -9,10 +9,13 @@ import { join } from 'path';
     GraphQLModule.forRoot({
       driver: ApolloDriver,
       playground: true,
-      autoSchemaFile: join(process.cwd(), "src/schema.graphql")
-      // typePaths: ["./**/*.graphql"] 
+      autoSchemaFile: join(process.cwd(), 'src/schema.graphql'),
+      definitions: {
+        path: join(process.cwd(), 'src/graphql.ts'),
+      },
+      // typePaths: ["./**/*.graphql"]
     }),
-    BookModule
+    BookModule,
   ],
   controllers: [],
   providers: [],
